@@ -1,4 +1,4 @@
-import type { Execution, Plan, Step } from "./types";
+import type { Execution, Plan, Step, StepUpdate } from "./types";
 
 const API_URL = import.meta.env.VITE_API_URL || "/api";
 
@@ -25,6 +25,14 @@ export const api = {
   createStep: (planId: number, payload: unknown) =>
     request<Step>(`/plans/${planId}/steps`, {
       method: "POST",
+      body: JSON.stringify(payload),
+    }),
+  deleteStepe: (planId: number, stepId: number) => request(`/plans/${planId}/steps/${stepId}`, {
+    method: "DELETE",
+  }),
+  updateStep: (planId: number, stepId: number, payload: StepUpdate) =>
+    request<Step>(`/plans/${planId}/steps/${stepId}`, {
+      method: "PUT",
       body: JSON.stringify(payload),
     }),
   listExecutions: (planId: number) =>
