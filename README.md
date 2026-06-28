@@ -25,3 +25,20 @@ esses caminhos ou o backend deve permitir a origem do frontend via CORS.
 - disparo e histórico de execuções;
 - cancelamento e retry;
 - acompanhamento do stream realtime por WebSocket.
+
+## Testes E2E
+
+Com o servidor de desenvolvimento em execução:
+
+```bash
+npm run cy:run
+```
+
+Para usar a interface interativa do Cypress:
+
+```bash
+npm run cy:open
+```
+
+O cenário inicial intercepta a API e valida o carregamento do plano, dos steps,
+do histórico e o disparo de uma execução sem depender do backend.
