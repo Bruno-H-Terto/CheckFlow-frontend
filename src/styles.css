@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #17201c;
+  --color-canvas: #f2f5f1;
+  --color-brand: #17683b;
+  --color-brand-soft: #e8f5eb;
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply m-0 min-w-80 bg-canvas text-ink antialiased;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
